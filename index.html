@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Select Dinámico || PHP - AJAX - jQuery</title>
+
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center">
+        <!-- LA CLASE CARD NOS SERVIRA PARA AGREGAR LA ANIMACION -->
+        <div class="card">
+            <div class="card-header text-center h4 font-weight-bolder text-warning">
+              Select Dinámico PHP - AJAX - jQuery
+            </div>
+            <div class="card-body">
+                <!-- select para el departamento -->
+                <div class="form-group">
+                    <label for="departamento" class="text-uppercase text-primary">departamento</label>
+                    <select class="custom-select form-control" id="departamento">
+                        <!-- cargar con js -->
+                    </select>
+                </div>
+                <!-- select para la provincia -->
+                <div class="form-group">
+                    <label for="provincia" class="text-uppercase text-primary">provincia</label>
+                    <select class="custom-select form-control" id="provincia">
+                        <!-- cargar con js dependiendo del departamento -->
+                    </select>
+                </div>
+                <!-- select para el distrito -->
+                <div class="form-group">
+                    <label for="distritos" class="text-uppercase text-primary">distritos</label>
+                    <select class="custom-select form-control" id="distrito">
+                        <!-- cargar con js dependiendo de la provincia -->
+                    </select>
+                </div>
+            </div>
+        </div>          
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="controlador/select.js"></script>
+</body>
+</html>
