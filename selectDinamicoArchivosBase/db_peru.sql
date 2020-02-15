@@ -1,11 +1,42 @@
-CREATE TABLE IF NOT EXISTS `ubdepartamento` (
-`idDepa` int(5) NOT NULL DEFAULT '0',
-`departamento` varchar(50) DEFAULT NULL,
-PRIMARY KEY (`idDepa`)
+-- phpMyAdmin SQL Dump
+-- version 4.9.2
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: localhost
+-- Tiempo de generación: 16-02-2020 a las 00:27:26
+-- Versión del servidor: 10.4.10-MariaDB
+-- Versión de PHP: 7.3.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `db_peru`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ubdepartamento`
+--
+
+CREATE TABLE `ubdepartamento` (
+  `idDepa` int(5) NOT NULL,
+  `departamento` varchar(50) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 --
--- Volcar la base de datos para la tabla `ubdepartamento`
+-- Volcado de datos para la tabla `ubdepartamento`
 --
+
 INSERT INTO `ubdepartamento` (`idDepa`, `departamento`) VALUES
 (1, 'AMAZONAS'),
 (2, 'ANCASH'),
@@ -32,19 +63,23 @@ INSERT INTO `ubdepartamento` (`idDepa`, `departamento`) VALUES
 (23, 'TACNA'),
 (24, 'TUMBES'),
 (25, 'UCAYALI');
+
 -- --------------------------------------------------------
+
 --
 -- Estructura de tabla para la tabla `ubdistrito`
 --
-CREATE TABLE IF NOT EXISTS `ubdistrito` (
-`idDist` int(5) NOT NULL DEFAULT '0',
-`distrito` varchar(50) DEFAULT NULL,
-`idProv` int(5) DEFAULT NULL,
-PRIMARY KEY (`idDist`)
+
+CREATE TABLE `ubdistrito` (
+  `idDist` int(5) NOT NULL DEFAULT 0,
+  `distrito` varchar(50) DEFAULT NULL,
+  `idProv` int(5) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 --
--- Volcar la base de datos para la tabla `ubdistrito`
+-- Volcado de datos para la tabla `ubdistrito`
 --
+
 INSERT INTO `ubdistrito` (`idDist`, `distrito`, `idProv`) VALUES
 (1, 'CHACHAPOYAS', 1),
 (2, 'ASUNCION', 1),
@@ -845,7 +880,7 @@ INSERT INTO `ubdistrito` (`idDist`, `distrito`, `idProv`) VALUES
 (798, 'OCONGATE', 79),
 (799, 'OROPESA', 79),
 (800, 'QUIQUIJANA', 79),
-(801, 'URUBAMBA',80),
+(801, 'URUBAMBA', 80),
 (802, 'CHINCHERO', 80),
 (803, 'HUAYLLABAMBA', 80),
 (804, 'MACHUPICCHU', 80),
@@ -1410,7 +1445,7 @@ INSERT INTO `ubdistrito` (`idDist`, `distrito`, `idProv`) VALUES
 (1362, 'SAN MIGUEL DE ACOS', 133),
 (1363, 'SANTA CRUZ DE ANDAMARCA', 133),
 (1364, 'SUMBILCA', 133),
-(1365, 'VEINTISIETE DE NOVIEMBRE', 133), 
+(1365, 'VEINTISIETE DE NOVIEMBRE', 133),
 (1366, 'MATUCANA', 134),
 (1367, 'ANTIOQUIA', 134),
 (1368, 'CALLAHUANCA', 134),
@@ -1917,19 +1952,23 @@ INSERT INTO `ubdistrito` (`idDist`, `distrito`, `idProv`) VALUES
 (1868, 'NESHUYA', 195),
 (1869, 'ALEXANDER VON HUMBOLDT', 195),
 (1870, 'PURUS', 196);
+
 -- --------------------------------------------------------
+
 --
 -- Estructura de tabla para la tabla `ubprovincia`
 --
-CREATE TABLE IF NOT EXISTS `ubprovincia` (
-`idProv` int(5) NOT NULL DEFAULT '0',
-`provincia` varchar(50) DEFAULT NULL,
-`idDepa` int(5) DEFAULT NULL,
-PRIMARY KEY (`idProv`)
+
+CREATE TABLE `ubprovincia` (
+  `idProv` int(5) NOT NULL DEFAULT 0,
+  `provincia` varchar(50) DEFAULT NULL,
+  `idDepa` int(5) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 --
--- Volcar la base de datos para la tabla `ubprovincia`
+-- Volcado de datos para la tabla `ubprovincia`
 --
+
 INSERT INTO `ubprovincia` (`idProv`, `provincia`, `idDepa`) VALUES
 (1, 'CHACHAPOYAS ', 1),
 (2, 'BAGUA', 1),
@@ -2127,3 +2166,40 @@ INSERT INTO `ubprovincia` (`idProv`, `provincia`, `idDepa`) VALUES
 (194, 'ATALAYA', 25),
 (195, 'PADRE ABAD', 25),
 (196, 'PURUS', 25);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `ubdepartamento`
+--
+ALTER TABLE `ubdepartamento`
+  ADD PRIMARY KEY (`idDepa`);
+
+--
+-- Indices de la tabla `ubdistrito`
+--
+ALTER TABLE `ubdistrito`
+  ADD PRIMARY KEY (`idDist`);
+
+--
+-- Indices de la tabla `ubprovincia`
+--
+ALTER TABLE `ubprovincia`
+  ADD PRIMARY KEY (`idProv`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `ubdepartamento`
+--
+ALTER TABLE `ubdepartamento`
+  MODIFY `idDepa` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
